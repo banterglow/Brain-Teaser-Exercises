@@ -1,0 +1,19 @@
+{
+  "name": "prep-brain-teasers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "module1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wongal5/Prep-Brain-Teasers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wongal5/Prep-Brain-Teasers/issues"
+  },
+  "homepage": "https://github.com/wongal5/Prep-Brain-Teasers#readme"
+}
