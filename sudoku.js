@@ -3,35 +3,26 @@ let checkComplete = (arr) => {
   arr.forEach(num => {
     objCounter[num] = objCounter[num] + 1 || 1;
   })
-  let newArr = Object.keys(objCounter).map(num => parseInt(num)).sort();
-  if (newArr.length !== 9) return false;
-  for (var i = 1; i <= 9; i++) {
-    if (newArr[i - 1] !== i) {
-      return false;
-    }
+  if (Object.keys(objCounter).map(num => parseInt(num)).sort().join('') !== '123456789') {
+    return false;
   }
   return true;
 }
 
 function doneOrNot(board) {
+  let vertArray, square;
   // horizontal
   for (var a = 0; a < board.length; a++) {
-    if (!checkComplete(board[a])) {
-      return 'Try again!';
-    }
+    if (!checkComplete(board[a])) return 'Try again!';
   }
   // vertical
-  let vertArray;
   for (var i = 0; i < board[0].length; i++) {
     vertArray = board.map(row => {
       return row[i];
     })
-    if (!checkComplete(vertArray)) {
-      return 'Try again!';
-    }
+    if (!checkComplete(vertArray)) return 'Try again!';
   }
   // 3x3 squares
-  let square;
   for (var b = 0; b < board[0].length; b+=3) {
     for (var c = 0; c < board[0].length; c += 3) {
       square = [];
@@ -40,14 +31,9 @@ function doneOrNot(board) {
           square.push(board[d][e]);
         }
       }
-      if (!checkComplete(square)) {
-        return 'Try again!';
-      }
-      // square = [board[b][c], board[b][c + 1], board[b][c+2], board[b+1][c], board[b+1][c+1], board[b+1][c+2], board[b+2][c], board[b+2][c+1], board[b+2][c+2]]
+      if (!checkComplete(square)) return 'Try again!';
     }
   }
-
-
   return 'Finished!';
 }
 
