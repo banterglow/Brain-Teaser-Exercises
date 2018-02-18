@@ -28,7 +28,7 @@ function doneOrNot(board) {
       square = [];
       for (var d = 0; d < 3; d++) {
         for (var e = 0; e < 3; e++) {
-          square.push(board[d][e]);
+          square.push(board[b+d][c+e]);
         }
       }
       if (!checkComplete(square)) return 'Try again!';
@@ -37,7 +37,8 @@ function doneOrNot(board) {
   return 'Finished!';
 }
 
-console.log(doneOrNot([[1, 2, 3, 4, 5, 6, 7, 8, 9],
+console.log(doneOrNot([
+[1, 2, 3, 4, 5, 6, 7, 8, 9],
 [2, 3, 4, 5, 6, 7, 8, 9, 1],
 [3, 4, 5, 6, 7, 8, 9, 1, 2],
 [4, 5, 6, 7, 8, 9, 1, 2, 3],
