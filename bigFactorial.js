@@ -1,11 +1,11 @@
-const bigNumber = require('bigNumber');
+const bigNumber = require('bigNumber.js');
 function extraLongFactorials(n) {
   let result = new bigNumber(1);
   while (n > 1) {
-    result *= n;
+    result = result.multipliedBy(n);
     n--;
   }
-  return result.valueOf();
+  return result;
 }
 
 console.log(extraLongFactorials(25));

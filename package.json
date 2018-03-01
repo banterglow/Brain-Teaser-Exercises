@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/wongal5/Prep-Brain-Teasers/issues"
   },
-  "homepage": "https://github.com/wongal5/Prep-Brain-Teasers#readme"
+  "homepage": "https://github.com/wongal5/Prep-Brain-Teasers#readme",
+  "dependencies": {
+    "bignumber.js": "^6.0.0"
+  }
 }
