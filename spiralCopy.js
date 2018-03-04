@@ -1,6 +1,6 @@
 function spiralCopy(inputMatrix) {
   let result = [inputMatrix[0][0]];
-  let current = [0, 0];
+  let current = [0,0];
   let rightBorder = bottomBorder = leftBorder = topBorder = 0;
   while (result.length < inputMatrix.length * inputMatrix[0].length) {
     result = result.concat(traverse('right', current, inputMatrix, rightBorder));
