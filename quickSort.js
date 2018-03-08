@@ -21,9 +21,7 @@ let quickSort = (arr, start, end) => {
 }
 
 let swap = (arr, a, b) => {
-  let temp = arr[a];
-  arr[a] = arr[b];
-  arr[b] = temp;
+  [arr[a], arr[b]] = [arr[b], arr[a]];
 }
 
 // console.log(quickSort([5,3,7,2,9,10,6], 0, 6));
