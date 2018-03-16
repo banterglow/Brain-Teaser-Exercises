@@ -1,14 +1,10 @@
 let eval = (exp) => {
-  let sum = 0;
-  let product = 1;
-  let compiled = '';
-  for (let i = 0; i < exp.length; i++) {
-    if (exp[i] === '+') {
-      if (compiled.length) {
-        product *= compiled;
-        compiled = '';
-      }
+  let sum = 0, product = 1, compiled = '';
+  for (let i = 0; i <= exp.length; i++) {
+    if (exp[i] === '+' || i === exp.length) {
+      product *= compiled;
       sum += product;
+      compiled = '';
       product = 1;
     } else if (exp[i] === '*') {
       product *= compiled;
@@ -17,12 +13,7 @@ let eval = (exp) => {
       compiled += exp[i];
     }
   }
-  if (compiled.length) {
-    product *= compiled;
-    compiled = '';
-  }
-  sum += product;
   return sum;
 }
 
-eval("50*3+12*4*2*60");
+eval("50*3+12*4+2*60");
